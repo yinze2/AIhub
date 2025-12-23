@@ -2,92 +2,78 @@
 import { AITool, Category } from './types';
 
 export const CATEGORIES: Category[] = [
-  'Text', 'Image', 'Video', 'Audio', 'Coding', 'Productivity', 'Research', 'Business'
+  'General LLM', 'AI Search', 'Image Gen', 'Video Gen', 'Audio & Music', 
+  'Coding AI', 'Web Generation', 'PPT & Slides', 'Excel & Data', 'Document AI',
+  'Task Agents', 'Productivity', 'Research', 'Marketing', 'Writing',
+  'Design & UI', 'Education', 'Translation', 'Finance', 'Legal', 
+  'Medical', 'Agent Frameworks', 'Character & Social', 'Developer Tools',
+  'Gaming AI', 'Hardware AI', 'Enterprise AI'
 ];
 
 export const INITIAL_TOOLS: AITool[] = [
-  {
-    id: '1',
-    name: 'ChatGPT',
-    description: 'The world\'s most popular conversational AI by OpenAI. Capable of writing, coding, and brainstorming.',
-    category: 'Text',
-    tags: ['Chatbot', 'Writing', 'Code'],
-    url: 'https://chat.openai.com',
-    imageUrl: 'https://picsum.photos/seed/chatgpt/400/250',
-    rating: 4.8,
-    reviewCount: 1250,
-    isVipEnabled: true,
-    pricing: 'Freemium',
-    reviews: []
-  },
-  {
-    id: '2',
-    name: 'Midjourney',
-    description: 'Advanced AI image generation known for high artistic quality and stunning detail.',
-    category: 'Image',
-    tags: ['Art', 'Design', 'Generative'],
-    url: 'https://www.midjourney.com',
-    imageUrl: 'https://picsum.photos/seed/midjourney/400/250',
-    rating: 4.9,
-    reviewCount: 890,
-    isVipEnabled: true,
-    pricing: 'Paid',
-    reviews: []
-  },
-  {
-    id: '3',
-    name: 'Claude 3.5 Sonnet',
-    description: 'Anthropic\'s most powerful model, known for nuanced reasoning and exceptional coding ability.',
-    category: 'Text',
-    tags: ['Chatbot', 'Reasoning', 'Technical'],
-    url: 'https://claude.ai',
-    imageUrl: 'https://picsum.photos/seed/claude/400/250',
-    rating: 4.7,
-    reviewCount: 450,
-    isVipEnabled: true,
-    pricing: 'Freemium',
-    reviews: []
-  },
-  {
-    id: '4',
-    name: 'GitHub Copilot',
-    description: 'Your AI pair programmer. Provides auto-completions and code suggestions in real-time.',
-    category: 'Coding',
-    tags: ['Programming', 'IDE', 'Automation'],
-    url: 'https://github.com/features/copilot',
-    imageUrl: 'https://picsum.photos/seed/copilot/400/250',
-    rating: 4.6,
-    reviewCount: 1100,
-    isVipEnabled: false,
-    pricing: 'Paid',
-    reviews: []
-  },
-  {
-    id: '5',
-    name: 'Runway Gen-2',
-    description: 'Powerful text-to-video and video-to-video AI tool for creative storytelling.',
-    category: 'Video',
-    tags: ['Video Editing', 'Creative', 'Cinematic'],
-    url: 'https://runwayml.com',
-    imageUrl: 'https://picsum.photos/seed/runway/400/250',
-    rating: 4.5,
-    reviewCount: 320,
-    isVipEnabled: true,
-    pricing: 'Freemium',
-    reviews: []
-  },
-  {
-    id: '6',
-    name: 'ElevenLabs',
-    description: 'The most realistic AI speech and voice synthesis platform available today.',
-    category: 'Audio',
-    tags: ['Voice', 'Text-to-Speech', 'Cloning'],
-    url: 'https://elevenlabs.io',
-    imageUrl: 'https://picsum.photos/seed/eleven/400/250',
-    rating: 4.8,
-    reviewCount: 670,
-    isVipEnabled: true,
-    pricing: 'Freemium',
-    reviews: []
-  }
+  // --- GENERAL LLM ---
+  { id: 'gpt-4o', name: 'GPT-4o', description: 'OpenAI 旗舰多模态模型，全球智能基准。', category: 'General LLM', tags: ['SOTA'], url: 'https://chat.openai.com', imageUrl: 'https://picsum.photos/seed/gpt4o/400/250', rating: 4.9, reviewCount: 150000, clickCount: 1200000, favoritesCount: 450000, isVipEnabled: true, pricing: 'Freemium', reviews: [], status: 'approved', origin: 'Global' },
+  { id: 'deepseek-v3', name: 'DeepSeek V3', description: '国产最强开源模型，极致推理能力与高性价比。', category: 'General LLM', tags: ['China', 'OpenSource'], url: 'https://chat.deepseek.com', imageUrl: 'https://picsum.photos/seed/ds3/400/250', rating: 4.98, reviewCount: 45000, clickCount: 890000, favoritesCount: 320000, isVipEnabled: false, pricing: 'Free', reviews: [], status: 'approved', origin: 'China' },
+  { id: 'claude-3-5', name: 'Claude 3.5 Sonnet', description: 'Anthropic 出品，代码、写作与逻辑推理的顶级选择。', category: 'General LLM', tags: ['Reasoning'], url: 'https://claude.ai', imageUrl: 'https://picsum.photos/seed/claude/400/250', rating: 4.95, reviewCount: 22000, clickCount: 450000, favoritesCount: 180000, isVipEnabled: true, pricing: 'Freemium', reviews: [], status: 'approved', origin: 'Global' },
+  { id: 'kimi', name: 'Kimi Chat', description: '月之暗面出品，超长上下文处理与文件解析专家。', category: 'General LLM', tags: ['LongText', 'China'], url: 'https://kimi.moonshot.cn', imageUrl: 'https://picsum.photos/seed/kimi/400/250', rating: 4.85, reviewCount: 18000, clickCount: 320000, favoritesCount: 140000, isVipEnabled: false, pricing: 'Freemium', reviews: [], status: 'approved', origin: 'China' },
+  { id: 'gemini-1-5', name: 'Gemini 1.5 Pro', description: 'Google 原生多模态模型，支持百万级上下文。', category: 'General LLM', tags: ['Google'], url: 'https://gemini.google.com', imageUrl: 'https://picsum.photos/seed/gemini/400/250', rating: 4.8, reviewCount: 12000, clickCount: 280000, favoritesCount: 95000, isVipEnabled: false, pricing: 'Freemium', reviews: [], status: 'approved', origin: 'Global' },
+  { id: 'qwen-2-5', name: '通义千问 2.5', description: '阿里最强模型，支持多语言及复杂任务处理。', category: 'General LLM', tags: ['Alibaba', 'China'], url: 'https://tongyi.aliyun.com', imageUrl: 'https://picsum.photos/seed/qwen/400/250', rating: 4.75, reviewCount: 9500, clickCount: 190000, favoritesCount: 72000, isVipEnabled: false, pricing: 'Freemium', reviews: [], status: 'approved', origin: 'China' },
+  { id: 'doubao', name: '豆包 (Doubao)', description: '字节跳动出品，用户体验极佳的随身 AI 助手。', category: 'General LLM', tags: ['ByteDance', 'China'], url: 'https://www.doubao.com', imageUrl: 'https://picsum.photos/seed/doubao/400/250', rating: 4.65, reviewCount: 62000, clickCount: 980000, favoritesCount: 210000, isVipEnabled: false, pricing: 'Free', reviews: [], status: 'approved', origin: 'China' },
+  { id: 'mistral-large', name: 'Mistral Large', description: '欧洲最强 AI，兼顾效率与卓越的逻辑性能。', category: 'General LLM', tags: ['Efficiency'], url: 'https://mistral.ai', imageUrl: 'https://picsum.photos/seed/mistral/400/250', rating: 4.7, reviewCount: 5000, clickCount: 110000, favoritesCount: 42000, isVipEnabled: false, pricing: 'Freemium', reviews: [], status: 'approved', origin: 'Global' },
+  { id: 'ernie-4', name: '文心一言 4.0', description: '百度旗舰大模型，中文知识深度与应用广泛。', category: 'General LLM', tags: ['Baidu', 'China'], url: 'https://yiyan.baidu.com', imageUrl: 'https://picsum.photos/seed/ernie/400/250', rating: 4.6, reviewCount: 25000, clickCount: 650000, favoritesCount: 110000, isVipEnabled: true, pricing: 'Freemium', reviews: [], status: 'approved', origin: 'China' },
+
+  // --- WEB GENERATION / SMART CONSTRUCTION ---
+  { id: 'v0-dev', name: 'v0.dev', description: 'Vercel 出品，通过对话直接生成 React/Next.js UI。', category: 'Web Generation', tags: ['UI', 'React'], url: 'https://v0.dev', imageUrl: 'https://picsum.photos/seed/v0/400/250', rating: 4.92, reviewCount: 8500, clickCount: 150000, favoritesCount: 92000, isVipEnabled: true, pricing: 'Freemium', reviews: [], status: 'approved', origin: 'Global' },
+  { id: 'lovable', name: 'Lovable', description: 'GPT-Engineer 进化版，全栈级全自动 Web 开发。', category: 'Web Generation', tags: ['Fullstack'], url: 'https://lovable.dev', imageUrl: 'https://picsum.photos/seed/lovable/400/250', rating: 4.9, reviewCount: 3200, clickCount: 45000, favoritesCount: 28000, isVipEnabled: true, pricing: 'Freemium', reviews: [], status: 'approved', origin: 'Global' },
+  { id: 'bolt-new', name: 'Bolt.new', description: 'StackBlitz 打造，在浏览器中一键启动全栈应用。', category: 'Web Generation', tags: ['Dev'], url: 'https://bolt.new', imageUrl: 'https://picsum.photos/seed/bolt/400/250', rating: 4.91, reviewCount: 4500, clickCount: 82000, favoritesCount: 41000, isVipEnabled: false, pricing: 'Freemium', reviews: [], status: 'approved', origin: 'Global' },
+  { id: 'wegic', name: 'Wegic AI', description: '国产 AI 建站神器，提供从对话到上线的完整方案。', category: 'Web Generation', tags: ['China', 'NoCode'], url: 'https://wegic.ai', imageUrl: 'https://picsum.photos/seed/wegic/400/250', rating: 4.8, reviewCount: 2100, clickCount: 28000, favoritesCount: 15000, isVipEnabled: false, pricing: 'Freemium', reviews: [], status: 'approved', origin: 'China' },
+  { id: 'framer-ai', name: 'Framer AI', description: '专业级网页设计与搭建，自动生成精美布局。', category: 'Web Generation', tags: ['Design'], url: 'https://framer.com/ai', imageUrl: 'https://picsum.photos/seed/framer/400/250', rating: 4.85, reviewCount: 12000, clickCount: 180000, favoritesCount: 65000, isVipEnabled: true, pricing: 'Freemium', reviews: [], status: 'approved', origin: 'Global' },
+  { id: 'replit-agent', name: 'Replit Agent', description: 'Replit 平台内置 Agent，直接构建并部署应用。', category: 'Web Generation', tags: ['Coding'], url: 'https://replit.com', imageUrl: 'https://picsum.photos/seed/replit/400/250', rating: 4.88, reviewCount: 7200, clickCount: 95000, favoritesCount: 52000, isVipEnabled: true, pricing: 'Paid', reviews: [], status: 'approved', origin: 'Global' },
+  { id: 'dora-ai', name: 'Dora AI', description: '生成具有 3D 特效与动态交互的高端网页。', category: 'Web Generation', tags: ['3D'], url: 'https://dora.run', imageUrl: 'https://picsum.photos/seed/dora/400/250', rating: 4.75, reviewCount: 3100, clickCount: 42000, favoritesCount: 18000, isVipEnabled: true, pricing: 'Freemium', reviews: [], status: 'approved', origin: 'Global' },
+  { id: '10web', name: '10Web AI Builder', description: '一键克隆任何网站并生成 WordPress 站点。', category: 'Web Generation', tags: ['WordPress'], url: 'https://10web.io', imageUrl: 'https://picsum.photos/seed/10web/400/250', rating: 4.6, reviewCount: 2500, clickCount: 38000, favoritesCount: 12000, isVipEnabled: true, pricing: 'Paid', reviews: [], status: 'approved', origin: 'Global' },
+  { id: 'coze-web', name: '扣子 (Coze) Web应用', description: '通过搭建智能体一键发布为 Web 应用或插件。', category: 'Web Generation', tags: ['China', 'Agent'], url: 'https://www.coze.cn', imageUrl: 'https://picsum.photos/seed/cozeweb/400/250', rating: 4.95, reviewCount: 15000, clickCount: 220000, favoritesCount: 110000, isVipEnabled: false, pricing: 'Free', reviews: [], status: 'approved', origin: 'China' },
+
+  // --- PPT & SLIDES ---
+  { id: 'gamma', name: 'Gamma', description: '全球最受欢迎的 AI PPT 工具，一键生成网页级幻灯片。', category: 'PPT & Slides', tags: ['SOTA'], url: 'https://gamma.app', imageUrl: 'https://picsum.photos/seed/gamma/400/250', rating: 4.94, reviewCount: 25000, clickCount: 520000, favoritesCount: 210000, isVipEnabled: true, pricing: 'Freemium', reviews: [], status: 'approved', origin: 'Global' },
+  { id: 'mindshow', name: 'MindShow', description: '国产良心工具，支持内容大纲一键转换为精美 PPT。', category: 'PPT & Slides', tags: ['China', 'Efficiency'], url: 'https://mindshow.fun', imageUrl: 'https://picsum.photos/seed/mind/400/250', rating: 4.85, reviewCount: 12000, clickCount: 180000, favoritesCount: 65000, isVipEnabled: false, pricing: 'Freemium', reviews: [], status: 'approved', origin: 'China' },
+  { id: 'chatppt', name: 'ChatPPT', description: '必优出品，深度集成 Office 插件，国内领先品牌。', category: 'PPT & Slides', tags: ['Office', 'China'], url: 'https://chatppt.com', imageUrl: 'https://picsum.photos/seed/chatppt/400/250', rating: 4.8, reviewCount: 8500, clickCount: 110000, favoritesCount: 42000, isVipEnabled: true, pricing: 'Freemium', reviews: [], status: 'approved', origin: 'China' },
+  { id: 'aippt-cn', name: 'AiPPT.cn', description: '强大的国产 AI PPT 生成平台，海量模板与智能化排版。', category: 'PPT & Slides', tags: ['China'], url: 'https://www.aippt.cn', imageUrl: 'https://picsum.photos/seed/aippt/400/250', rating: 4.75, reviewCount: 6400, clickCount: 92000, favoritesCount: 31000, isVipEnabled: true, pricing: 'Freemium', reviews: [], status: 'approved', origin: 'China' },
+  { id: 'islide-ai', name: 'iSlide AI', description: '老牌 PPT 插件全面进化，AI 辅助设计与素材搜索。', category: 'PPT & Slides', tags: ['Design', 'China'], url: 'https://www.islide.cc', imageUrl: 'https://picsum.photos/seed/islide/400/250', rating: 4.82, reviewCount: 15000, clickCount: 250000, favoritesCount: 92000, isVipEnabled: true, pricing: 'Freemium', reviews: [], status: 'approved', origin: 'China' },
+  { id: 'tome-app', name: 'Tome', description: '以故事叙述为核心的 AI 幻灯片，排版极其精美。', category: 'PPT & Slides', tags: ['Storytelling'], url: 'https://tome.app', imageUrl: 'https://picsum.photos/seed/tome/400/250', rating: 4.7, reviewCount: 18000, clickCount: 310000, favoritesCount: 85000, isVipEnabled: true, pricing: 'Freemium', reviews: [], status: 'approved', origin: 'Global' },
+  { id: 'canva-magic', name: 'Canva Magic Design', description: 'Canva 内置 AI，一键将文字描述转化为设计稿。', category: 'PPT & Slides', tags: ['Graphic'], url: 'https://canva.com', imageUrl: 'https://picsum.photos/seed/canva/400/250', rating: 4.88, reviewCount: 52000, clickCount: 880000, favoritesCount: 350000, isVipEnabled: false, pricing: 'Freemium', reviews: [], status: 'approved', origin: 'Global' },
+  { id: 'beautiful-ai', name: 'Beautiful.ai', description: '智能排版专家，确保每一页 PPT 都符合设计规范。', category: 'PPT & Slides', tags: ['Layout'], url: 'https://beautiful.ai', imageUrl: 'https://picsum.photos/seed/beautiful/400/250', rating: 4.65, reviewCount: 4200, clickCount: 65000, favoritesCount: 22000, isVipEnabled: true, pricing: 'Paid', reviews: [], status: 'approved', origin: 'Global' },
+  { id: 'slides-ai', name: 'SlidesAI.io', description: 'Google Slides 的强大 AI 扩展插件。', category: 'PPT & Slides', tags: ['Plugin'], url: 'https://slidesai.io', imageUrl: 'https://picsum.photos/seed/slidesai/400/250', rating: 4.5, reviewCount: 3100, clickCount: 42000, favoritesCount: 15000, isVipEnabled: false, pricing: 'Freemium', reviews: [], status: 'approved', origin: 'Global' },
+
+  // --- EXCEL & DATA ---
+  { id: 'sheetai', name: 'SheetAI', description: '将 AI 注入 Google Sheets，自动处理复杂逻辑与提取。', category: 'Excel & Data', tags: ['SaaS'], url: 'https://sheetai.app', imageUrl: 'https://picsum.photos/seed/sheet/400/250', rating: 4.75, reviewCount: 2500, clickCount: 45000, favoritesCount: 18000, isVipEnabled: true, pricing: 'Paid', reviews: [], status: 'approved', origin: 'Global' },
+  { id: 'chatexcel', name: 'ChatExcel', description: '北大团队开发，自然语言对话式操作 Excel，国产之光。', category: 'Excel & Data', tags: ['China', 'Science'], url: 'https://chatexcel.com', imageUrl: 'https://picsum.photos/seed/ctx/400/250', rating: 4.9, reviewCount: 8200, clickCount: 120000, favoritesCount: 54000, isVipEnabled: false, pricing: 'Free', reviews: [], status: 'approved', origin: 'China' },
+  { id: 'wps-ai-excel', name: 'WPS AI 表格', description: '金山办公出品，最适合中国职场人的表格 AI 助手。', category: 'Excel & Data', tags: ['China', 'Office'], url: 'https://ai.wps.cn', imageUrl: 'https://picsum.photos/seed/wpsexcel/400/250', rating: 4.85, reviewCount: 32000, clickCount: 410000, favoritesCount: 190000, isVipEnabled: true, pricing: 'Freemium', reviews: [], status: 'approved', origin: 'China' },
+  { id: 'rows-ai', name: 'Rows.com', description: '新一代电子表格，原生集成 AI 与各种外部数据源。', category: 'Excel & Data', tags: ['Innovation'], url: 'https://rows.com', imageUrl: 'https://picsum.photos/seed/rows/400/250', rating: 4.7, reviewCount: 3100, clickCount: 35000, favoritesCount: 12000, isVipEnabled: false, pricing: 'Freemium', reviews: [], status: 'approved', origin: 'Global' },
+  { id: 'formula-bot', name: 'Formula Bot', description: 'Excel 公式生成器，瞬间解决各种棘手函数问题。', category: 'Excel & Data', tags: ['Utility'], url: 'https://formulabot.com', imageUrl: 'https://picsum.photos/seed/fbot/400/250', rating: 4.8, reviewCount: 5600, clickCount: 82000, favoritesCount: 35000, isVipEnabled: false, pricing: 'Freemium', reviews: [], status: 'approved', origin: 'Global' },
+  { id: 'numerous-ai', name: 'Numerous.ai', description: '让你的表格具备 AI 能力，批量处理文本、翻译等。', category: 'Excel & Data', tags: ['Automation'], url: 'https://numerous.ai', imageUrl: 'https://picsum.photos/seed/numer/400/250', rating: 4.6, reviewCount: 2100, clickCount: 24000, favoritesCount: 9000, isVipEnabled: true, pricing: 'Paid', reviews: [], status: 'approved', origin: 'Global' },
+  { id: 'julius-ai', name: 'Julius AI', description: '你的数据分析专家，直接对话生成图表与洞察。', category: 'Excel & Data', tags: ['Analysis'], url: 'https://julius.ai', imageUrl: 'https://picsum.photos/seed/julius/400/250', rating: 4.88, reviewCount: 4200, clickCount: 65000, favoritesCount: 28000, isVipEnabled: true, pricing: 'Freemium', reviews: [], status: 'approved', origin: 'Global' },
+  { id: 'airtable-ai', name: 'Airtable AI', description: '在低代码平台 Airtable 中深度集成生成式 AI。', category: 'Excel & Data', tags: ['LowCode'], url: 'https://airtable.com', imageUrl: 'https://picsum.photos/seed/airtable/400/250', rating: 4.82, reviewCount: 12000, clickCount: 180000, favoritesCount: 75000, isVipEnabled: false, pricing: 'Freemium', reviews: [], status: 'approved', origin: 'Global' },
+  { id: 'gptexcel', name: 'GPTExcel', description: '简单快捷的 Excel & Google Sheets AI 助手。', category: 'Excel & Data', tags: ['Tool'], url: 'https://gptexcel.uk', imageUrl: 'https://picsum.photos/seed/gptexcel/400/250', rating: 4.5, reviewCount: 1500, clickCount: 21000, favoritesCount: 7000, isVipEnabled: false, pricing: 'Freemium', reviews: [], status: 'approved', origin: 'Global' },
+
+  // --- DOCUMENT AI ---
+  { id: 'jasper', name: 'Jasper AI', description: '全球顶级的 AI 写作与文档助手，适合营销与企业。', category: 'Document AI', tags: ['Marketing'], url: 'https://jasper.ai', imageUrl: 'https://picsum.photos/seed/jasperdoc/400/250', rating: 4.9, reviewCount: 32000, clickCount: 450000, favoritesCount: 210000, isVipEnabled: true, pricing: 'Paid', reviews: [], status: 'approved', origin: 'Global' },
+  { id: 'notion-ai', name: 'Notion AI', description: '直接在 Notion 笔记中调用强大的 AI 辅助。', category: 'Document AI', tags: ['Workspace'], url: 'https://notion.so', imageUrl: 'https://picsum.photos/seed/notion/400/250', rating: 4.92, reviewCount: 85000, clickCount: 1200000, favoritesCount: 650000, isVipEnabled: true, pricing: 'Freemium', reviews: [], status: 'approved', origin: 'Global' },
+  { id: 'wps-ai-doc', name: 'WPS AI 文字', description: '金山办公深度重构，懂中文公文与创意写作。', category: 'Document AI', tags: ['China', 'Office'], url: 'https://ai.wps.cn', imageUrl: 'https://picsum.photos/seed/wpsdoc/400/250', rating: 4.85, reviewCount: 42000, clickCount: 520000, favoritesCount: 220000, isVipEnabled: true, pricing: 'Freemium', reviews: [], status: 'approved', origin: 'China' },
+  { id: 'effie', name: 'Effie', description: '国产沉浸式写作工具，内置 AI 辅助思想导图。', category: 'Document AI', tags: ['China', 'Writing'], url: 'https://effie.co', imageUrl: 'https://picsum.photos/seed/effie/400/250', rating: 4.78, reviewCount: 7200, clickCount: 85000, favoritesCount: 32000, isVipEnabled: false, pricing: 'Freemium', reviews: [], status: 'approved', origin: 'China' },
+  { id: 'copy-ai', name: 'Copy.ai', description: '专注于营销文案生成的 AI 平台。', category: 'Document AI', tags: ['Copywriting'], url: 'https://copy.ai', imageUrl: 'https://picsum.photos/seed/copy/400/250', rating: 4.8, reviewCount: 15000, clickCount: 210000, favoritesCount: 92000, isVipEnabled: true, pricing: 'Freemium', reviews: [], status: 'approved', origin: 'Global' },
+  { id: 'grammarly-ai', name: 'Grammarly AI', description: '英文写作、语法纠错与风格优化的事实标准。', category: 'Document AI', tags: ['Grammar'], url: 'https://grammarly.com', imageUrl: 'https://picsum.photos/seed/grammarly/400/250', rating: 4.9, reviewCount: 120000, clickCount: 3500000, favoritesCount: 1500000, isVipEnabled: true, pricing: 'Freemium', reviews: [], status: 'approved', origin: 'Global' },
+  { id: 'rytr', name: 'Rytr', description: '高性价比的 AI 写作助手，支持多种写作场景。', category: 'Document AI', tags: ['Affordable'], url: 'https://rytr.me', imageUrl: 'https://picsum.photos/seed/rytr/400/250', rating: 4.6, reviewCount: 8500, clickCount: 120000, favoritesCount: 45000, isVipEnabled: false, pricing: 'Freemium', reviews: [], status: 'approved', origin: 'Global' },
+  { id: 'writesonic', name: 'Writesonic', description: '全能型 AI 写作平台，集成 SEO 优化。', category: 'Document AI', tags: ['SEO'], url: 'https://writesonic.com', imageUrl: 'https://picsum.photos/seed/writesonic/400/250', rating: 4.75, reviewCount: 11000, clickCount: 150000, favoritesCount: 52000, isVipEnabled: true, pricing: 'Freemium', reviews: [], status: 'approved', origin: 'Global' },
+  { id: 'zhibiao', name: '织表 (Zhibiao)', description: '国内创新的结构化文档与数据 AI 助手。', category: 'Document AI', tags: ['China', 'Data'], url: 'https://zhibiao.ai', imageUrl: 'https://picsum.photos/seed/zhibiao/400/250', rating: 4.5, reviewCount: 1200, clickCount: 15000, favoritesCount: 5400, isVipEnabled: false, pricing: 'Freemium', reviews: [], status: 'approved', origin: 'China' },
+
+  // --- TASK AGENTS ---
+  { id: 'coze-cn', name: '扣子 (Coze.cn)', description: '字节跳动出品，最强大的国产 AI 智能体搭建平台。', category: 'Task Agents', tags: ['SOTA', 'China'], url: 'https://www.coze.cn', imageUrl: 'https://picsum.photos/seed/cozecn/400/250', rating: 4.98, reviewCount: 52000, clickCount: 880000, favoritesCount: 410000, isVipEnabled: false, pricing: 'Free', reviews: [], status: 'approved', origin: 'China' },
+  { id: 'zapier-central', name: 'Zapier Central', description: '让 AI 具备操作 6000+ 应用的能力，真正执行任务。', category: 'Task Agents', tags: ['Automation'], url: 'https://zapier.com/central', imageUrl: 'https://picsum.photos/seed/zapier/400/250', rating: 4.9, reviewCount: 5400, clickCount: 92000, favoritesCount: 45000, isVipEnabled: true, pricing: 'Paid', reviews: [], status: 'approved', origin: 'Global' },
+  { id: 'auto-gpt', name: 'AutoGPT', description: '自主型 AI Agent 开山之作，致力于完成复杂目标。', category: 'Task Agents', tags: ['OpenSource'], url: 'https://agpt.co', imageUrl: 'https://picsum.photos/seed/agpt/400/250', rating: 4.7, reviewCount: 12000, clickCount: 250000, favoritesCount: 120000, isVipEnabled: false, pricing: 'Free', reviews: [], status: 'approved', origin: 'Global' },
+  { id: 'baidu-agentbuilder', name: '百度智能体 (AgentBuilder)', description: '百度文心智能体平台，依托百度生态，流量大。', category: 'Task Agents', tags: ['Baidu', 'China'], url: 'https://mbd.baidu.com/ma/agent/builder', imageUrl: 'https://picsum.photos/seed/baidua/400/250', rating: 4.75, reviewCount: 21000, clickCount: 350000, favoritesCount: 110000, isVipEnabled: false, pricing: 'Free', reviews: [], status: 'approved', origin: 'China' },
+  { id: 'dify', name: 'Dify.ai', description: '优秀的国产开源 LLM 应用开发平台，深受开发者喜爱。', category: 'Task Agents', tags: ['China', 'OpenSource'], url: 'https://dify.ai', imageUrl: 'https://picsum.photos/seed/dify/400/250', rating: 4.92, reviewCount: 15000, clickCount: 180000, favoritesCount: 85000, isVipEnabled: false, pricing: 'Freemium', reviews: [], status: 'approved', origin: 'China' },
+  { id: 'lindy', name: 'Lindy.ai', description: '全能 AI 助理，自动处理日程、邮件与日常任务。', category: 'Task Agents', tags: ['Assistant'], url: 'https://lindy.ai', imageUrl: 'https://picsum.photos/seed/lindy/400/250', rating: 4.8, reviewCount: 3200, clickCount: 52000, favoritesCount: 21000, isVipEnabled: true, pricing: 'Paid', reviews: [], status: 'approved', origin: 'Global' },
+  { id: 'multion', name: 'MultiOn', description: '网页浏览器 Agent，替你在互联网上执行真实操作。', category: 'Task Agents', tags: ['Browsing'], url: 'https://multion.ai', imageUrl: 'https://picsum.photos/seed/multion/400/250', rating: 4.85, reviewCount: 1500, clickCount: 28000, favoritesCount: 12000, isVipEnabled: true, pricing: 'Paid', reviews: [], status: 'approved', origin: 'Global' },
+  { id: 'agent-gpt', name: 'AgentGPT', description: '在浏览器中直接部署并运行自主型 AI 智能体。', category: 'Task Agents', tags: ['Browser'], url: 'https://agentgpt.reworkd.ai', imageUrl: 'https://picsum.photos/seed/agentgpt/400/250', rating: 4.65, reviewCount: 7500, clickCount: 110000, favoritesCount: 42000, isVipEnabled: false, pricing: 'Freemium', reviews: [], status: 'approved', origin: 'Global' },
+  { id: 'hyperwrite-personal', name: 'HyperWrite Personal', description: '学习并模仿你的工作风格，自动处理重复任务。', category: 'Task Agents', tags: ['Personal'], url: 'https://hyperwriteai.com', imageUrl: 'https://picsum.photos/seed/hyper/400/250', rating: 4.7, reviewCount: 5400, clickCount: 62000, favoritesCount: 25000, isVipEnabled: true, pricing: 'Freemium', reviews: [], status: 'approved', origin: 'Global' },
 ];

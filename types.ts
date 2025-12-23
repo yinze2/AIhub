@@ -1,5 +1,11 @@
 
-export type Category = 'Text' | 'Image' | 'Video' | 'Audio' | 'Coding' | 'Productivity' | 'Research' | 'Business';
+export type Category = 
+  | 'General LLM' | 'AI Search' | 'Image Gen' | 'Video Gen' | 'Audio & Music' 
+  | 'Coding AI' | 'Web Generation' | 'PPT & Slides' | 'Excel & Data' | 'Document AI'
+  | 'Task Agents' | 'Productivity' | 'Research' | 'Marketing' | 'Writing'
+  | 'Design & UI' | 'Education' | 'Translation' | 'Finance' | 'Legal' 
+  | 'Medical' | 'Agent Frameworks' | 'Character & Social' | 'Developer Tools'
+  | 'Gaming AI' | 'Hardware AI' | 'Enterprise AI';
 
 export interface Review {
   id: string;
@@ -20,12 +26,22 @@ export interface AITool {
   imageUrl: string;
   rating: number;
   reviewCount: number;
+  clickCount: number;
+  favoritesCount: number;
   isVipEnabled: boolean;
   pricing: 'Free' | 'Freemium' | 'Paid';
   reviews: Review[];
+  status: 'approved' | 'pending';
+  submittedAt?: string;
+  origin: 'Global' | 'China';
 }
 
-export interface NavItem {
-  label: string;
-  path: string;
+export interface NewsItem {
+  id: string;
+  title: string;
+  summary: string;
+  source: string;
+  url: string;
+  publishedAt: string;
+  sentiment: 'POSITIVE' | 'NEGATIVE' | 'NEUTRAL';
 }

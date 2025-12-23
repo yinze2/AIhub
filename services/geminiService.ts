@@ -1,7 +1,6 @@
 
-import { GoogleGenAI } from "@google/genai";
+import { GoogleGenAI, Type } from "@google/genai";
 
-// 动态获取 AI 实例，避免在模块加载阶段访问 process.env 导致崩溃
 const getAIInstance = () => {
   return new GoogleGenAI({ apiKey: process.env.API_KEY as string });
 };
@@ -21,7 +20,46 @@ export const getSmartRecommendations = async (userPrompt: string) => {
     return response.text;
   } catch (error) {
     console.error("Gemini Error:", error);
-    return "AI Assistant is currently unavailable. Please try direct search.";
+    return "AI Assistant is currently unavailable.";
+  }
+};
+
+export const fetchLatestAINews = async (lang: 'en' | 'zh') => {
+  try {
+    const ai = getAIInstance();
+    const query = lang === 'zh' 
+      ? "获取过去24小时内关于 OpenAI, Google Gemini, Anthropic, Meta AI 的最新重要新闻和舆情，返回JSON数组。"
+      : "Fetch the latest important news and public sentiment about OpenAI, Google Gemini, Anthropic, and Meta AI from the last 24 hours. Return a JSON array.";
+
+    const response = await ai.models.generateContent({
+      model: "gemini-3-flash-preview",
+      contents: query,
+      config: {
+        tools: [{ googleSearch: {} }],
+        responseMimeType: "application/json",
+        responseSchema: {
+          type: Type.ARRAY,
+          items: {
+            type: Type.OBJECT,
+            properties: {
+              id: { type: Type.STRING },
+              title: { type: Type.STRING },
+              summary: { type: Type.STRING },
+              source: { type: Type.STRING },
+              url: { type: Type.STRING },
+              publishedAt: { type: Type.STRING },
+              sentiment: { type: Type.STRING, description: "POSITIVE, NEGATIVE, or NEUTRAL" }
+            },
+            required: ["id", "title", "summary", "source", "url", "publishedAt", "sentiment"]
+          }
+        }
+      },
+    });
+
+    return JSON.parse(response.text);
+  } catch (error) {
+    console.error("Fetch News Error:", error);
+    return [];
   }
 };
 
