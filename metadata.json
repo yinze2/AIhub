@@ -1,0 +1,8 @@
+{
+  "name": "AI Hub - The Ultimate AI Directory",
+  "description": "A comprehensive directory for AI tools with categorization, user reviews, VIP access, and developer submission features.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
