@@ -18,17 +18,11 @@ export const translations = {
         'General': 'General Discussions',
         'Academic': 'Academic & Research',
         'Developer': 'Developer Hubs',
-        'Creative': 'AI Art & Creativity',
-        'Industry': 'Enterprise & Industry'
+        'Creative Art': 'AI Art & Creativity',
+        'LLM & Prompt': 'LLM & Prompt Engineering',
+        'Industry': 'Enterprise & Industry',
+        'Safety & Ethics': 'AI Safety & Ethics'
       }
-    },
-    news: {
-      title: "AI Trends & News",
-      subtitle: "Hourly updated insights from major AI organizations and news outlets.",
-      lastUpdated: "Last updated",
-      readMore: "Read Source",
-      loading: "Fetching latest AI updates...",
-      refresh: "Refresh Now"
     },
     categoryNames: {
       'General LLM': 'General LLM',
@@ -58,6 +52,15 @@ export const translations = {
       'Gaming AI': 'Gaming AI',
       'Hardware AI': 'Hardware AI',
       'Enterprise AI': 'Enterprise AI'
+    },
+    // Fix: Added missing news translation for English
+    news: {
+      title: "AI Insights & News",
+      subtitle: "Real-time aggregation of the latest updates from OpenAI, Google, Anthropic, and other leading AI research entities.",
+      lastUpdated: "Last Updated",
+      readMore: "Read More",
+      loading: "Gathering latest AI news...",
+      refresh: "Refresh Now"
     },
     hero: {
       title: "Discover the Future of",
@@ -164,8 +167,10 @@ export const translations = {
         'General': '综合讨论',
         'Academic': '学术与研究',
         'Developer': '开发者中心',
-        'Creative': '艺术与创意',
-        'Industry': '行业应用'
+        'Creative Art': '艺术与创意',
+        'LLM & Prompt': '大语言模型/提示词',
+        'Industry': '行业应用',
+        'Safety & Ethics': '安全与伦理'
       }
     },
     categoryNames: {

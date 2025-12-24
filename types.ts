@@ -7,7 +7,14 @@ export type Category =
   | 'Medical' | 'Agent Frameworks' | 'Character & Social' | 'Developer Tools'
   | 'Gaming AI' | 'Hardware AI' | 'Enterprise AI';
 
-export type ForumCategory = 'General' | 'Academic' | 'Developer' | 'Creative' | 'Industry';
+export type ForumCategory = 
+  | 'General' 
+  | 'Developer' 
+  | 'Academic' 
+  | 'Creative Art' 
+  | 'LLM & Prompt' 
+  | 'Industry' 
+  | 'Safety & Ethics';
 
 export interface Review {
   id: string;
